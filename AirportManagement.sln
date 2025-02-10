@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35707.178
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AM.UI.Console", "AM.UI.Console\AM.UI.Console.csproj", "{F0D74AE5-B04C-4333-B7C9-27606F595F68}"
+	ProjectSection(ProjectDependencies) = postProject
+		{C2DDE329-7954-435C-B143-C17F5BB05E20} = {C2DDE329-7954-435C-B143-C17F5BB05E20}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AM.Core.Domain", "AM.Core.Domain\AM.Core.Domain.csproj", "{C2DDE329-7954-435C-B143-C17F5BB05E20}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F0D74AE5-B04C-4333-B7C9-27606F595F68}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F0D74AE5-B04C-4333-B7C9-27606F595F68}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F0D74AE5-B04C-4333-B7C9-27606F595F68}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F0D74AE5-B04C-4333-B7C9-27606F595F68}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C2DDE329-7954-435C-B143-C17F5BB05E20}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C2DDE329-7954-435C-B143-C17F5BB05E20}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C2DDE329-7954-435C-B143-C17F5BB05E20}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C2DDE329-7954-435C-B143-C17F5BB05E20}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
