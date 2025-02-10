@@ -31,6 +31,17 @@ namespace AM.Core.Domain
 
         // constructors 
         public Plane() { }
+
+        //equals by id 
+        public override bool Equals(object obj)
+        {
+            if (obj == null)
+                return false;
+            if (obj.GetType() != this.GetType())
+                return false;
+            Plane p = (Plane)obj;
+            return p.PlaneId == this.PlaneId;
+        }
         public Plane(PlaneType pt, int capacity, DateTime date)
         {
             this.Capacity = capacity;

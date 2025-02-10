@@ -1,8 +1,10 @@
 ﻿using AM.Core.Domain;
+using AM.Core.Services;
 
 Console.WriteLine("Hello, World!");
 
 Plane plane = new();
+IFlightService flightService = new FlightService();
 
 plane.Type = PlaneType.Boing;
 plane.Capacity = 180;
@@ -19,3 +21,4 @@ Plane plane3 = new Plane
 
 Console.WriteLine(plane);
 Console.WriteLine(plane2);
+
