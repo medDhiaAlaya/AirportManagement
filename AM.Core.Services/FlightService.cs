@@ -15,14 +15,14 @@ namespace AM.Core.Services
         //methode GetFlightDates giving distination
         public IList<DateTime> GetFlightDates(string destination)
         {
-            
-             
-                var result= flights.Where(f => f.Destination == destination).Select(f => f.FlightDate).ToList();
+
+
+            var result = flights.Where(f => f.Destination == destination).Select(f => f.FlightDate).ToList();
 
             return result;
 
         }
-       
+
         public IList<Flight> GetFlights(string filterType, string filterValue)
         {
             switch (filterType)
@@ -46,12 +46,12 @@ namespace AM.Core.Services
                     throw new ArgumentException("Invalid filter type");
             }
         }
-       
+
 
         //ShowFlightDetails
         public void ShowFlightDetails(Plane plane)
         {
-            var planeFlights = flights.Where(f => f.Myplane.Equals(plane) ).ToList();
+            var planeFlights = flights.Where(f => f.Myplane.Equals(plane)).ToList();
             var datesAndDestinations = planeFlights.Select(f => new { f.FlightDate, f.Destination }).ToList();
 
 
@@ -73,9 +73,22 @@ namespace AM.Core.Services
             return average;
         }
 
+        //public SortFlights retourner les vols tries par ordre decroissant de leurs dures estimees
+        public IList<Flight> SortFlights()
+        {
+            return flights.OrderByDescending(f => f.EstimateDuration).ToList();
+        }
+        //getThreeOlderTravellers retourner les trois passagers les plus ages pour vol donne
+        public IList<Passenger> GetThreeOlderTravellers(Flight flight)
+        {
+            return flight.Passengers.OrderByDescending(p => p.Age).Take(3).ToList();
+        }
+        //ShowGroupedFlights retourner les vols regroupes par destination
+        public IList<Flight> ShowGroupedFlights()
+        {
+            return flights.GroupBy(f => f.Destination).Select(g => new Flight { Destination = g.Key, Passengers = g.SelectMany(f => f.Passengers).ToList() }).ToList();
 
 
-
-
+        }
     }
 }
